@@ -235,15 +235,23 @@ function applyGuestName() {
     const params = new URLSearchParams(window.location.search);
     const nama = params.get("nama");
 
-    if (nama) {
-        // Ubah teks di cover → "hello andi saputra"
-        const receiver = document.getElementById("receiverName");
-        if (receiver) receiver.innerHTML = `Hello ${nama}`;
+    const receiver = document.getElementById("receiverName");
 
-        // Otomatis isi guestbook
-        const gName = document.getElementById("gName");
-        if (gName) gName.value = nama;
+    if (receiver) {
+        receiver.innerHTML = `
+            Kepada Yth.<br>
+            Bapak/Ibu/Saudara/i<br>
+            <span class="font-bold text-[16px] sm:text-[20px]">
+                ${nama ? nama : "Tamu Undangan"}
+            </span>
+        `;
     }
+
+    // Otomatis isi guestbook
+    const gName = document.getElementById("gName");
+    if (gName && nama) gName.value = nama;
 }
 
 applyGuestName();
+
+

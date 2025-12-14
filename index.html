@@ -151,7 +151,7 @@
                     <p  class="text-center font-bold text-lg text-stone-800">Emma Meylani Aditama, S.Pd</p>
                     <p class="text-center text-sm text-gray-800">Putri Pertama Dari Pasangan
                         <br>
-                        <b>Bapak Hardyanto, S.Pd.SD & Ibu Warsini, S.Pd.SD</b>
+                        <b>Bapak Hardiyanto, S.Pd.SD & Ibu Warsini, S.Pd.SD</b>
                     </p>
                     <br>
                     <p class="text-center text-sm text-gray-800">Desa Purbasari</p>
@@ -182,7 +182,7 @@
                     <p  class="text-center font-bold text-lg text-stone-800">Emma Meylani Aditama, S.Pd</p>
                     <p class="text-center text-sm text-gray-800">Putri Pertama Dari Pasangan
                         <br>
-                        <b>Bapak Hardyanto, S.Pd.SD & Ibu Warsini, S.Pd.SD</b>
+                        <b>Bapak Hardiyanto, S.Pd.SD & Ibu Warsini, S.Pd.SD</b>
                     </p>
                     <br>
                     <p class="text-center text-sm text-gray-800">Desa Purbasari</p>
@@ -225,7 +225,7 @@
                     <hr class="line2 mt-8 h-[50px] m-auto border-[1px] border-slate-800">
                     <p class="tmpt text-slate-800 m-auto mt-8 m-auto text-center">Desa<br>Purbasari</p>
                 </div>
-                <p class="text-slate-800 text-center italic mt-5">08:00 - Selesai <br>Ds. Purbasari, Kec. Pangkalan Lada, Kab. Kotawaringin Barat</p>
+                <p class="text-slate-800 text-center italic mt-5">09:00 - Selesai <br>Ds. Purbasari, Kec. Pangkalan Lada, Kab. Kotawaringin Barat</p>
             </div>
 
 
@@ -239,7 +239,7 @@
                     <hr class="line2 mt-8 h-[50px] m-auto border-[1px] border-slate-800">
                     <p class="tmpt text-slate-800 m-auto mt-8 m-auto text-center">Desa<br>Purbasari</p>
                 </div>
-                <p class="text-slate-800 text-center italic mt-5">10:00 - Selesai <br>Ds. Purbasari, Kec. Pangkalan Lada, Kab. Kotawaringin Barat</p>
+                <p class="text-slate-800 text-center italic mt-5">10:30 - Selesai <br>Ds. Purbasari, Kec. Pangkalan Lada, Kab. Kotawaringin Barat</p>
             </div>
         </div>
         
@@ -345,23 +345,47 @@
         <img src="img/element/flower2.png" alt="" class="sm:w-[300px] w-[80%] pt-[50px] flower4 muncul m-auto">
         <h1 class="title5 text-[50px] text-center mt-[-5px]" style="font-family: 'Passions Conflict', cursive;">Gift</h1>
 
+
         <div class="bg-white p-4 shadow rounded mb-4">
-            <h3 class="font-bold text-lg">Rekening 1</h3>
-            <p>Bank: BCA</p>
-            <p>Nomor: 1234567890</p>
-            <p>Atas Nama: Putra Aisyifa Mashuda</p>
-            <button onclick="copyText('1234567890')" 
-                class="bg-orange-400 text-white px-4 py-2 my-2 rounded">Copy</button>
+            <h3 class="font-bold text-lg">Emma Meylani Aditama</h3>
+            <p>Bank: BTN</p>
+            <p class="rekening">19101610376260</p>
+
+            <button class="copyBtn bg-orange-400 text-white px-4 py-2 my-2 rounded">
+                Copy
+            </button>
         </div>
 
         <div class="bg-white p-4 shadow rounded mb-4">
-            <h3 class="font-bold text-lg">Rekening 2</h3>
+            <h3 class="font-bold text-lg">Putra Aisyifa Mashuda</h3>
             <p>Bank: Mandiri</p>
-            <p>Nomor: 9876543210</p>
-            <p>Atas Nama: Emma Meylani Aditama</p>
-            <button onclick="copyText('9876543210')" 
-                class="bg-orange-400 text-white px-4 py-2 my-2 rounded">Copy</button>
+            <p class="rekening">1590006387772</p>
+
+            <button class="copyBtn bg-orange-400 text-white px-4 py-2 my-2 rounded">
+                Copy
+            </button>
         </div>
+
+        <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const buttons = document.querySelectorAll(".copyBtn");
+
+            buttons.forEach(button => {
+                button.addEventListener("click", function () {
+                    const rekening = this
+                        .closest("div")
+                        .querySelector(".rekening")
+                        .innerText;
+
+                    navigator.clipboard.writeText(rekening)
+                        .then(() => alert("Nomor rekening disalin"))
+                        .catch(() => alert("Gagal menyalin"));
+                });
+            });
+        });
+        </script>
+
+        
     </section>
 
 
@@ -429,7 +453,7 @@
     </div>
 
   
-    <script src="query-3.6.1.min.js"></script>
+    <script src="js/query-3.6.1.min.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>

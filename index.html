@@ -79,10 +79,6 @@
                 Open Invitation
             </button>
 
-            <p id="receiverName"
-               class="text-white text-center font-semibold text-[14px] sm:text-[18px] mt-4">
-            </p>
-
         </div>
     </div>
     
@@ -121,6 +117,19 @@
                         <path d="M8 16s6-5.686 6-10A6 6 0 1 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
                     </svg>
                     <span class="nav-title font-bold text-slate-600 text-center">Address</span>
+                </a>
+            </li>
+
+            <li class="gift m-auto">
+                <a href="#gift" class="grid">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                         fill="#475569" class="bi bi-gift-fill m-auto" viewBox="0 0 16 16">
+                        <path d="M3 2.5a2.5 2.5 0 0 1 5 0A2.5 2.5 0 0 1 13 2.5V4H3V2.5z"/>
+                        <path d="M3 5h10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5z"/>
+                    </svg>
+                    <span class="nav-title font-bold text-slate-600 text-center">
+                        Gift
+                    </span>
                 </a>
             </li>
 
@@ -434,8 +443,12 @@
                 Kode Pos : 74184
             </div>
         </section>
+
+
         
     </section>
+
+
 
     <!-- GUESTBOOK -->
     <section id="guestbook" class="w-[90%] m-auto mt-10 mb-20">
@@ -449,8 +462,23 @@
             <input id="gName" type="text" placeholder="Name"
                 class="w-full border p-2 rounded mb-3">
 
-            <input id="gAddress" type="text" placeholder="Address"
-                class="w-full border p-2 rounded mb-3">
+            <div class="mb-4 text-left">
+                <p class="font-semibold mb-2 text-gray-700">
+                    Konfirmasi Kehadiran
+                </p>
+
+                <label class="flex items-center gap-2 mb-2">
+                    <input type="radio" name="attendance" value="Hadir" checked>
+                    <span>Hadir</span>
+                </label>
+
+                <label class="flex items-center gap-2">
+                    <input type="radio" name="attendance" value="Tidak Hadir">
+                    <span>Tidak Hadir</span>
+                </label>
+            </div>
+
+
 
             <textarea id="gMessage" rows="4" placeholder="Your Text"
                 class="w-full border p-2 rounded mb-3"></textarea>

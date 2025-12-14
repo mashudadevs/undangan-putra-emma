@@ -180,7 +180,7 @@ document.addEventListener("DOMContentLoaded", loadGuestBook);
 
 function addGuestBook() {
     const name = document.getElementById("gName").value;
-    const address = document.getElementById("gAddress").value;
+    const attendance = document.querySelector('input[name="attendance"]:checked').value;
     const message = document.getElementById("gMessage").value;
 
     if (!name || !message) {
@@ -190,22 +190,23 @@ function addGuestBook() {
 
     const guest = {
         name,
-        address,
+        attendance,
         message
     };
 
-    // simpan ke local storage
+    // Simpan ke localStorage
     let data = JSON.parse(localStorage.getItem("guestbook")) || [];
     data.push(guest);
     localStorage.setItem("guestbook", JSON.stringify(data));
 
     loadGuestBook();
 
-    // reset form
-    document.getElementById("gName").value = "";
-    document.getElementById("gAddress").value = "";
+    // Reset form
     document.getElementById("gMessage").value = "";
-}
+
+    alert("Terima kasih atas konfirmasi kehadirannya 🙏");
+}   
+
 
 function loadGuestBook() {
     const list = document.getElementById("guestList");
@@ -217,16 +218,18 @@ function loadGuestBook() {
         list.innerHTML += `
             <div class="p-4 bg-white border rounded shadow">
                 <h3 class="font-semibold text-lg">${item.name}</h3>
-                ${item.address ? `<p class="text-sm">${item.address}</p>` : ""}
+
+                <p class="text-sm font-semibold ${
+                    item.attendance === "Hadir" ? "text-green-600" : "text-red-500"
+                }">
+                    ${item.attendance}
+                </p>
+
                 <p class="mt-2">${item.message}</p>
             </div>
         `;
     });
 }
-
-
-
-
 
 // ===========================
 // QUERY PARAM UNTUK NAMA TAMU

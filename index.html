@@ -458,36 +458,42 @@
         <!-- <h2 class="text-center text-3xl font-bold mb-5">Guest Book</h2> -->
 
         <!-- FORM -->
-        <div class="bg-white p-5 rounded-lg shadow mb-6">
-            <input id="gName" type="text" placeholder="Name"
-                class="w-full border p-2 rounded mb-3">
+        <form id="guestForm" class="space-y-2">
 
-            <div class="mb-4 text-left">
-                <p class="font-semibold mb-2 text-gray-700">
-                    Konfirmasi Kehadiran
-                </p>
+          <input
+            id="fbName"
+            type="text"
+            placeholder="Nama"
+            required
+            class="w-full border p-2 rounded"
+          >
 
-                <label class="flex items-center gap-2 mb-2">
-                    <input type="radio" name="attendance" value="Hadir" checked>
-                    <span>Hadir</span>
-                </label>
+          <select
+            id="fbAttendance"
+            class="w-full border p-2 rounded"
+          >
+            <option value="Hadir">Hadir</option>
+            <option value="Tidak Hadir">Tidak Hadir</option>
+          </select>
 
-                <label class="flex items-center gap-2">
-                    <input type="radio" name="attendance" value="Tidak Hadir">
-                    <span>Tidak Hadir</span>
-                </label>
-            </div>
+          <textarea
+            id="fbMessage"
+            placeholder="Tulis pesan & doa"
+            required
+            class="w-full border p-2 rounded"
+          ></textarea>
 
+          <button
+            type="submit"
+            class="bg-red-400 text-white px-4 py-2 rounded"
+          >
+            Kirim Ucapan
+          </button>
 
+        </form>
 
-            <textarea id="gMessage" rows="4" placeholder="Your Text"
-                class="w-full border p-2 rounded mb-3"></textarea>
+        <div id="guestList" class="mt-4 space-y-3"></div>
 
-            <button onclick="addGuestBook()"
-                class="bg-orange-400 text-white py-2 px-4 rounded w-full font-semibold">
-                Kirim
-            </button>
-        </div>
 
         <!-- LIST KOMENTAR -->
         <div id="guestList" class="space-y-4"></div>
@@ -530,5 +536,7 @@
   
     <script src="js/query-3.6.1.min.js"></script>
     <script src="js/script.js"></script>
+    <script type="module" src="js/guestbook-firebase.js"></script>
+
 </body>
 </html>
